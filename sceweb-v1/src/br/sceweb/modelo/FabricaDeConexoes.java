@@ -1,0 +1,16 @@
+package br.sceweb.modelo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class FabricaDeConexoes {
+public Connection getConnetion() {
+	String url = "jdbc:mysql://localhost:3306/sceweb";
+	try{
+		return DriverManager.getConnection(url, "root", "aluno");
+	}catch (SQLException e){
+		throw new RuntimeException(e);
+	}
+}
+}
